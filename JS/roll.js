@@ -63,9 +63,11 @@ function crap() {	// main funtion
  
         if(sum == 7 || sum == 11){
         	win();
+			roll_Count = 0;
         }else
         	if(sum == 2 || sum == 3 || sum == 12){
         		lose();
+				roll_Count = 0;
         	}else {							//need roll again
         		point = sum;
         		document.getElementById("pointText").value = point; // show point
