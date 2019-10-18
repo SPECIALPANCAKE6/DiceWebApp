@@ -61,10 +61,10 @@ function crap() {	// main funtion
     if (roll_Count == 0) {	// roll first time
         sum = roll(); 
  
-        if(sum == 2 || sum == 3 || sum == 12){
+        if(sum == 7 || sum == 11){
         	win();
         }else
-        	if(sum == 7 || sum == 11){
+        	if(sum == 2 || sum == 3 || sum == 12){
         		lose();
         	}else {							//need roll again
         		point = sum;
