@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+
+<html>
+
+    <head>
+        <title>DICE</title>
+        
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        
+        <link rel="stylesheet" type="text/css" href="./CSS/style.css"/>
+
+        <link rel="icon" type="image/png" href="Images/dice.png">
+        
+        <link rel="apple-touch-icon" href="Images/180px.png">
+        <link rel="apple-touch-icon" href="Images/167px.png">
+        <link rel="apple-touch-icon" href="Images/152px.png">
+        <link rel="apple-touch-icon" href="Images/120px.png">
+        
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,900" rel="stylesheet">
+    </head>
+     
+    <body>
+    
+        <h1 id="landscape_text">USE PORTRAIT MODE PLEASE</h1>
+      <div id="text_area" >
+            <p id="roll">ROLL!</p>
+        </div>
+        
+        <div id="buttons">
+            <button id="dice_btn" onclick="dice_number();">No. of dice: 1</button>    
+            <button onclick="crap();" id="roll_btn">ROLL</button> 
+        </div>
+        
+        <div>
+		<table><tr>
+			<td><div id="Points" style="width: 180px; height: 90px" align="right">
+			<span>Point</span><input id="pointText" size="20px" type="text" value="0"></div></td>
+				
+			<td><div id="Win" style="width: 180px; height: 90px" align="right">
+              <span>Wins</span><input id="winText" size="20px" type="text" value="0"></div></td>
+				
+			<td><div id="Lose" style="width: 180px; height: 90px" align="right">
+			<span>Loses</span><input id="loseText" size="20px" type="text" value="0"></div></td>
+            <td><div id="Sum" style="height: 90px; width: 180px" align="right">
+              <span>Sum</span><input id="sumText" size="20px" type="text" value="0"></div</td>
+		</tr></table>
+	</div>
+        <script src="JS/roll.js"></script>
+    
+    </body> 
+ 
+	<footer>
+			<h2 align="center">In the first round: Roll a 2, 3, or 12 to WIN and 7 or 11 to LOSE</h2>
+			<h3 align="center">If you roll any other number, the number becomes the point</h2>
+			<h2 align="center">In the subsequent rounds: Roll the point again to WIN and 7 LOSE</h2>
+			<h5 align="center">Refresh page to redo first roll
+	</footer>
+</html>   
