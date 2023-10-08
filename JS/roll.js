@@ -11,33 +11,33 @@ function dice_number() {
 
     var current_number = document.getElementById("dice_btn").innerHTML;
     no_of_dice = current_number.replace("No. of dice: ","");
-    
+
     if (document.getElementById("dice_btn").innerHTML == "No. of dice: 1") {
-        
+
         document.getElementById("dice_btn").innerHTML = "No. of dice: 2";
         current_number = document.getElementById("dice_btn").innerHTML;
-        no_of_dice = current_number.replace("No. of dice: ",""); 
+        no_of_dice = current_number.replace("No. of dice: ","");
 
     }
-    
+
     else {
-        
+
         document.getElementById("dice_btn").innerHTML = "No. of dice: 1";
         current_number = document.getElementById("dice_btn").innerHTML;
         no_of_dice = current_number.replace("No. of dice: ","");
-        
+
     }
-    
+
 }
 
 function roll() {
     // Math.floor((Math.random() * 10) + 1);
     var randoms = [];
     var rolls_value;
-    
+
 	var sound = new Audio("audio/zar.mp3");
 	sound.play();
-	
+
     if (no_of_dice == 1) {
         randoms[0] = (Math.floor((Math.random() * 6) + 1)).toString();
         rolls_value = randoms[0];
@@ -45,7 +45,7 @@ function roll() {
     else {
         for (i = 0;i<2;i++)
             randoms[i] = (Math.floor((Math.random() * 6) + 1)).toString();
-        
+
         rolls_value = randoms[0] + ',' + randoms[1];
 		roll_Count++;
     }
@@ -53,14 +53,14 @@ function roll() {
 	var die2 = parseInt(randoms[1],10);
     var sum = die1 + die2;
 	document.getElementById("roll").innerHTML = rolls_value;
-	document.getElementById("sumText").value = sum;   
+	document.getElementById("sumText").value = sum;
 	return sum;
 }
 
-function crap() {	// main funtion
+export default function crap() {	// main funtion
     if (roll_Count == 0) {	// roll first time
-        sum = roll(); 
- 
+        sum = roll();
+
         if(sum == 7 || sum == 11){
         	win();
 			roll_Count = 0;
@@ -71,9 +71,9 @@ function crap() {	// main funtion
         	}else {							//need roll again
         		point = sum;
         		document.getElementById("pointText").value = point; // show point
-        	}   
+        	}
     }else
-    	if (roll_Count != 0) {	
+    	if (roll_Count != 0) {
     		rollAgain();
         }
 }
@@ -85,7 +85,7 @@ function rollAgain() {	//function roll again
         lose();
     }
     else if (point == sum) {
-        win(); 
+        win();
     }
 }
 
@@ -97,7 +97,7 @@ function win() {	//function show win the game
     sound.play();
     winCount++;
     document.getElementById("winText").value = winCount;
-    
+
 }
 
 function lose() {	//function show lose the game
